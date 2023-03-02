@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row col-12" >
+        <app-head-to-do  (addToDo)="additem($event)"  ></app-head-to-do>
+        <div *ngFor="let item of todo,let i = index">
+            <app-list-to-do [singleItem]="item" [index]="i" (deletItem)="removeitem($event)"  
+            (doneItem)="done($event)"
+            ></app-list-to-do>
+        </div>
+     </div>
+</div>
